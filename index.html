@@ -562,6 +562,16 @@ html.emb #app{min-height:var(--vh,100dvh)}
   #app{grid-template-rows:50px auto 48px}
   .pl.d0,.pl.d1{width:min(100%,calc(var(--vh,100dvh) - 50px - 48px - 16px))!important}
 }
+
+/* v30: centrar verticalmente cuando sobra altura (app instalada) */
+@media (orientation:landscape) and (max-height:620px){
+  #app{align-content:center}
+}
+@media (orientation:landscape) and (min-height:370px) and (max-height:620px){
+  #app{grid-template-rows:62px auto 58px;row-gap:6px}
+  .pl.d0,.pl.d1{width:min(100%,calc(var(--vh,100dvh) - 62px - 58px - 24px))!important}
+  .dh .name{font-size:13px}
+}
 </style>
 
 <div id="app">
@@ -603,7 +613,7 @@ html.emb #app{min-height:var(--vh,100dvh)}
 
 <div id="lib" hidden>
   <div class="in">
-    <div class="lh"><h2 id="libTitle">Cargar en plato 1</h2><span class="ver">v29</span><button class="x" id="libClose">Cerrar</button></div>
+    <div class="lh"><h2 id="libTitle">Cargar en plato 1</h2><span class="ver">v30</span><button class="x" id="libClose">Cerrar</button></div>
     <div class="acts">
       <button class="btn" id="pickFiles">Añadir canciones</button>
       <button class="btn" id="pickFolder">Añadir carpeta</button>
